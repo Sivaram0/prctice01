@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: jenkis
+  labels:
+    app: jenkinspro
+spec:
+  containers:
+  - name: jen
+    image: jenkins
+    ports:
+    - containerPort: 8080
+
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: jenkinsproase
+  labels:
+    app: jenkinsproact
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30001
+  selector:
+    app: jenkinspro
