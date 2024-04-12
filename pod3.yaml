@@ -6,7 +6,7 @@ metadata:
     app: customservice
 spec:
   containers:
-  - name: customserer
+  - name: customserver
     image: sivaramaprasaditrajula/netflix:latest
     resources:
       requests:
@@ -17,6 +17,4 @@ spec:
         cpu: "500m"
     ports:
     - containerPort: 8081
-      name: custom_container
-
-
+      name: custom-port
