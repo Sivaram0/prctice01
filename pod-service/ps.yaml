@@ -7,12 +7,12 @@ metadata:
 spec:
   containers:
   - name: jen
-    image: jenkins
+    image: jenkins/jenkins:lts-jdk17
     ports:
     - containerPort: 8080
     imagePullPolicy: IfNotPresent
 
-    
+
 ---
 apiVersion: v1
 kind: Service
