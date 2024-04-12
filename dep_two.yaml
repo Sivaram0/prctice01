@@ -1,34 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment-lb
+  name: httpd
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app-lb
+      app: httpd
   template:
     metadata:
       labels:
-        app: my-app-lb
+        app: httpd
     spec:
       containers:
-      - name: my-container
-        image: nginx:latest
+      - name: httpd
+        image: httpd
         ports:
         - containerPort: 80
+        env:
+        - name: TITLE
+          value: "APACHE APP2"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-lb
-  labels:
-    app: my-app-lb
+  name: httpd
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 80
-    targetPort: 80
-    protocol: TCP
   selector:
-    app: my-app-lb
+    app: httpd
