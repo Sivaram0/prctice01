@@ -10,3 +10,7 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
+  - name: apache
+    image: sivaramaprasaditrajula/netfc:50
+    ports:
+      - containerPort: 8047
