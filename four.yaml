@@ -12,5 +12,5 @@ spec:
     image: nginx
     resources:
       limits:
-        cpu: 500m
-        memory: 512Mi
+        cpu: 50m
+        memory: 64Mi
