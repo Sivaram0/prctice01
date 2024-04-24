@@ -1,0 +1,10 @@
+apiVersion: apps/V1
+kind: Pod
+metadata:
+  -name: busy
+  -spec:
+    containers:
+    - name: busty
+      image: busybox:1.35
+      ports:
+      - containerPort: 89
