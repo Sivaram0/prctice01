@@ -8,12 +8,5 @@ spec:
   containers:
   - name: nginxcontent
     image: nginx:1.14.2
-    resources:
-      requests:
-        cpu: "1"
-        memory: "256Mi"
-      limits:
-        cpu: "1"
-        memory: "256Mi"
     ports:
     - containerPort: 80
