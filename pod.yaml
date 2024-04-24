@@ -6,11 +6,7 @@ metadata:
     name: firstpod
 spec:
   containers:
-  - name: nginxcontent
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
-  - name: apache
-    image: sivaramaprasaditrajula/netfc:50
-    ports:
-      - containerPort: 8047
+    - name: nginxcontent
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80
