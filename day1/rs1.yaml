@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Replicaset
+metadata:
+   name: iset
+   labels: 
+     env: isett
+spec:
+  replicas: 3
+  selector: 
+    matchLabels: 
+        tier: second 
+  template: 
+    metadata:
+      labels: 
+         tier: second
+    spec:
+       containers:
+        - name: jeuo
+          image: httpd:latest
+          ports: 
+            - containerPort: 70           
+
