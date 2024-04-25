@@ -8,14 +8,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: friont
+      tier: front  # Corrected from 'friont' to 'front'
   template:
     metadata:
       labels:
-        tier: backenf
+        tier: front  # Corrected from 'backenf' to 'front'
     spec:
       containers:
-      - name: jenkisns
+      - name: jenkins  # Corrected spelling of 'jenkisns'
         image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
         ports:
         - containerPort: 90
