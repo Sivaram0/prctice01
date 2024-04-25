@@ -23,10 +23,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jro
+  name: apache-svc
 spec:
+  type: NodePort
   selector:
-    tier: jeto  # Changed 'app' to 'tier' to match labels in the Deployment
+    app: httpd
   ports:
-    - port: 80
-      targetPort: 80
+  - name: apache
+    port: 80
+    targetPort: 80
+    nodePort: 30000
