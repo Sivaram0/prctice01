@@ -7,12 +7,11 @@ spec:
   - name: nginx
     image: nginx:latest
     resources:
-    requests:
-      cpu: "0.1 CPU"
-      memory: "64 Mebibytes"
-    limits:
-      cpu: "0.1 CPU"
-      memory: "32 Mebibytes"
+      requests:
+        cpu: "100m"
+        memory: "64Mi"
+      limits:
+        cpu: "50m"
+        memory: "32Mi"
     ports:
     - containerPort: 80
-
