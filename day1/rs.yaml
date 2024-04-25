@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: replicaset
+metadata:
+  name: rss
+  labels:
+    env: trail1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: friont
+  template:
+    metadata:
+      labels:
+        tier: backenf
+    spec:
+      containers:
+      - name: jenkisns
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
+        ports:
+        - containerPort: 90
