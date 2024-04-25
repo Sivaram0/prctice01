@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: practice-deplo
+  labels:
+    env: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: jeto
+  template:
+    metadata:
+      labels:
+        tier: jeto
+    spec:
+      containers:
+      - name: dep
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jro
+spec:
+  selector:
+    tier: jeto  # Changed 'app' to 'tier' to match labels in the Deployment
+  ports:
+    - port: 80
+      targetPort: 80
