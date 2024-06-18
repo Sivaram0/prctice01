@@ -1,0 +1,12 @@
+git clone "git.com"
+git config --global user.name "name" [set up configuration global level]
+git config --global user.email "Email" [setup configuartion global level]
+git init [ if the repository is empty means we need to intitate the git in here ]
+git status [status of the repository ]
+git add . or  git add <specific-file>
+git commit -m "added message"
+git status [status of the repository]
+git branch [check branches]
+git checkout -b <branch-name> [created new branch and checkout to that branch]
+git branch -d branch_name [ delete branch in local] 
+git push origin --delete brach_name [delete branch in remote]
