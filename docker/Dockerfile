@@ -1,6 +1,11 @@
-FROM python:3.9-slim
-WORKDIR /app
-COPY . /app
-ENV NAME World
+# Use the official Nginx base image
+FROM nginx:alpine
+
+# Copy the HTML file to the Nginx default directory
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 80 to the outside world
 EXPOSE 80
-CMD ["python", "app.py"]
+
+# Start Nginx when the container launches
+CMD ["nginx", "-g", "daemon off;"]
