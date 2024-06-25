@@ -1,8 +1,6 @@
 FROM nginx:alpine
 
-RUN touch /usr/share/nginx/html/frond.html
-
-COPY frond.html /usr/share/nginx/html/frond.html
+COPY frond.html /usr/share/nginx/html/index.html
 
 EXPOSE 80
 
