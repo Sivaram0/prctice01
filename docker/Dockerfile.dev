@@ -1,13 +1,9 @@
-# Use the official Nginx base image
 FROM nginx:alpine
 
-# Copy the HTML file to the Nginx default directory
 RUN touch /usr/share/nginx/html/frond.html
 
 COPY frond.html /usr/share/nginx/html/frond.html
 
-# Expose port 80 to the outside world
 EXPOSE 80
 
-# Start Nginx when the container launches
 CMD ["nginx", "-g", "daemon off;"]
