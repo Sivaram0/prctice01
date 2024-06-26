@@ -1,0 +1,16 @@
+piepline{
+    agent any
+    tools{
+        jdk 'jdk1.17'
+    }
+    stages{
+        stage('clean_workspace'){
+            steps{
+                clanWS()
+            }
+        }
+        stage('git_checkout'){
+            git(url:'www.google.com', branch:'main', credinetialId:'git_credits')
+        }
+    }
+}
